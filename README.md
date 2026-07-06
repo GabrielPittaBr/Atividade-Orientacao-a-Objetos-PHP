@@ -62,7 +62,7 @@ versões do PHP ao mesmo tempo. Ótimo para não travar a demonstração.
 ## Estrutura
 
 ```
-php-poo/
+.
   codigo/            # os 7 exemplos executáveis (.php)
   documentacao/      # explicação de cada conceito (.md) — material do professor
   GUIA-DO-GRUPO.md   # roteiro interno de apresentação (não entregar)
