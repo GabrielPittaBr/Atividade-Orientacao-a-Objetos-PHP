@@ -46,6 +46,7 @@ $veiculos = [
 // O MESMO laco chama o MESMO metodo descrever() em cada objeto...
 // ...mas cada um responde conforme a SUA classe. Isso e o polimorfismo.
 echo "Percorrendo a lista de veiculos e chamando descrever() em cada um:\n\n";
+
 foreach ($veiculos as $v) {
     echo "- " . $v->descrever() . "\n";
 }

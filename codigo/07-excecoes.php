@@ -34,19 +34,30 @@ class Veiculo
 
 $carro = new Veiculo("Fiat");
 
-// try:     bloco onde um erro PODE acontecer.
-// catch:   captura a excecao e evita que o programa quebre.
-// finally: SEMPRE executa no final, dando erro ou nao.
-try {
-    $carro->acelerar(50);
-    echo "Acelerou. Velocidade: {$carro->velocidade()} km/h\n";
+// fgets(STDIN) le uma linha digitada pelo usuario no terminal.
+// O laco "while (true)" repete a pergunta ate um valor VALIDO ser aceito.
+echo "Digite a velocidade para acelerar o {$carro->marca} (numero negativo gera erro):\n";
 
-    $carro->acelerar(-10);                 // isso dispara a excecao
-    echo "Esta linha NAO chega a executar.\n";
-} catch (VelocidadeInvalidaException $e) {
-    echo "Erro capturado: " . $e->getMessage() . "\n";
-} finally {
-    echo "Bloco finally: sempre roda (ex.: limpeza/fechamento de recursos).\n";
+while (true) {
+    echo "> ";
+    // trim() remove espacos em branco e quebras de linha do inicio/fim da string.
+    $entrada    = trim(fgets(STDIN));
+    // (int) converte a string para inteiro, ignorando caracteres nao numericos.
+    $incremento = (int) $entrada;
+
+    // try:     bloco onde um erro PODE acontecer (aqui, acelerar()).
+    // catch:   captura a excecao e evita que o programa quebre.
+    // finally: SEMPRE executa no final, dando erro ou nao.
+    try {
+        $carro->acelerar($incremento);          // pode lancar a excecao
+        echo "Acelerou! Velocidade atual: {$carro->velocidade()} km/h\n";
+        break;                                   // valor valido: sai do laco
+    } catch (VelocidadeInvalidaException $e) {
+        echo "Erro capturado: " . $e->getMessage() . "\n";
+        echo "Tente novamente com um valor positivo.\n";
+    } finally {
+        echo "Bloco finally: sempre roda (ex.: limpeza/fechamento de recursos).\n\n";
+    }
 }
 
 echo "\nO programa CONTINUOU normalmente apos o try/catch.\n";
