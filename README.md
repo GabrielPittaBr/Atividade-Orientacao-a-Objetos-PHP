@@ -39,7 +39,7 @@ php --version
 
 ## Como rodar cada exemplo
 
-A partir da pasta `php-poo`, rode um arquivo por vez:
+A partir da raiz do projeto, rode um arquivo por vez:
 
 ```bash
 php codigo/01-classes.php
@@ -59,12 +59,37 @@ Se não der para instalar o PHP na hora da apresentação, use o **[3v4l.org](ht
 cole o conteúdo de qualquer arquivo `.php`, clique em **Run** e o site executa em várias
 versões do PHP ao mesmo tempo. Ótimo para não travar a demonstração.
 
+## Demonstração final: PHP no backend web (mural de recados)
+
+Além dos 7 conceitos isolados, a pasta [site-demo/](site-demo/) traz um **mini site**
+funcional: um mural de recados (livro de visitas) onde o visitante envia nome + mensagem
+por um formulário e o recado aparece na lista, persistido em `recados.json`.
+
+**Por que esta demo?** Ela mostra o PHP no seu **uso natural — backend web**: com
+pouquíssimo código e **um único comando** (`php -S localhost:8000`) já temos um servidor
+recebendo um formulário, processando no servidor e devolvendo HTML pronto. O mesmo em Java
+exigiria bem mais configuração (servlet/Spring, build, servidor de aplicação). E, para
+manter a coerência com o resto da apresentação, **ainda usamos POO**: as classes `Recado`
+(um recado) e `MuralRecados` (carrega, valida, adiciona e salva os recados) — inclusive com
+`try/catch` para tratar o envio de nome/mensagem vazios.
+
+Como rodar:
+
+```bash
+cd site-demo
+php -S localhost:8000
+```
+
+Depois abra **http://localhost:8000** no navegador. Não precisa de Apache/XAMPP: o servidor
+embutido do PHP já dá conta.
+
 ## Estrutura
 
 ```
 .
   codigo/            # os 7 exemplos executáveis (.php)
   documentacao/      # explicação de cada conceito (.md) — material do professor
+  site-demo/         # mini site (mural de recados): PHP no backend web
   GUIA-DO-GRUPO.md   # roteiro interno de apresentação (não entregar)
   README.md          # este arquivo
 ```

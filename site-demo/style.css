@@ -1,0 +1,109 @@
+/* Estilo simples e apresentavel para o mural de recados. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1f2430;
+    margin: 0;
+    padding: 2rem 1rem;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 0.25rem;
+}
+
+.sub {
+    margin: 0 0 1.5rem;
+    color: #6b7280;
+}
+
+/* Mensagem de erro (recado invalido). */
+.erro {
+    background: #fdecea;
+    border: 1px solid #f5c2c0;
+    color: #b3261e;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Formulario de envio. */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+input,
+textarea {
+    font: inherit;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+button {
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: #2563eb;
+    border: none;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Lista de recados. */
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.recado {
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.recado header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.35rem;
+}
+
+.recado .data {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.recado p {
+    margin: 0;
+}
+
+.vazio {
+    color: #9ca3af;
+    text-align: center;
+}
